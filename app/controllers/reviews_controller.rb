@@ -11,7 +11,8 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        recipe = Review.create!()
+        review = Review.create!(review_params)
+        render json: review, status: :created
     end
 
     def show
