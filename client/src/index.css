@@ -386,7 +386,7 @@ h1.score {
     padding-bottom: 50px;
   }
 
-  .searchbar-form {
+  /* .searchbar-form {
     color: white;
     padding: 16px;
     padding-top: 10px;
@@ -426,4 +426,42 @@ h1.score {
   
   .drop-item:hover {background-color: #ddd;}
   
-  .show {display: block;}
+  .show {display: block;} */
+
+  /*--------USER-PAGE------------------------------------------------------------------------------------------*/
+
+  .my-profile{
+    margin: 10px;
+    width: 500px;
+    padding: 25px;
+    padding-right: 100px;
+    padding-left: 100px;
+    color: whitesmoke;
+    background: #242529;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.12);
+  }
+
+  #my-prof-img{
+    max-width: 200px;
+  }
+
+  /*-------MY-REVIEWS------------------------------------------------------------------------------------------*/
+
+  .my-review-card-div{
+    margin: 10px;
+    width: 500px;
+    padding: 25px;
+    color: whitesmoke;
+    background: #242529;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .my-review-card-link{
+    text-decoration: none;
+  }
+  
+  .my-review-card-div:hover{
+    background-color: #1f2121;
+  }

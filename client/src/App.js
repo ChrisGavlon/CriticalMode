@@ -8,6 +8,7 @@ import ResultDetails from "./ResultDetails";
 import ReviewDetail from "./ReviewDetail";
 import SearchResults from "./SearchResults";
 import SignUpForm from "./SignUpForm";
+import UserPage from "./UserPage";
 
 function App() {
   const [reviews, setReviews] = useState([])
@@ -52,6 +53,9 @@ function App() {
         }
         <Route exact path="/new-review">
           <NewReview game={selectedGame} user={user}/>
+        </Route>
+        <Route exact path="/profile">
+          <UserPage user={user} setSelectedReview={setSelectedReview}/>
         </Route>
         <Route exact path="/">
           <Home reviews={reviews} setReviews={setReviews} setSelectedReview={setSelectedReview}/>
