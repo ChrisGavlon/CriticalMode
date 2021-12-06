@@ -3,6 +3,7 @@ import { Switch, Route, useHistory } from "react-router-dom";
 import Home from "./Home";
 import LoginForm from "./LoginForm";
 import NavBar from "./NavBar";
+import NewReview from "./NewReview";
 import ResultDetails from "./ResultDetails";
 import ReviewDetail from "./ReviewDetail";
 import SearchResults from "./SearchResults";
@@ -35,12 +36,12 @@ function App() {
         {
           selectedGame && (
         <Route exact path={`/results/${selectedGame.id}`}>
-          <ResultDetails game={selectedGame}/>
+          <ResultDetails game={selectedGame} setSelectedReview={setSelectedReview} setSelectedGame={setSelectedGame} user={user}/>
         </Route>
           )
         }
         <Route exact path="/results">
-          <SearchResults search={search} setSelectedGame={setSelectedGame}/>
+          <SearchResults search={search} setSelectedGame={setSelectedGame} />
         </Route>
         { 
           selectedReview && ( 
@@ -49,6 +50,9 @@ function App() {
           </Route>
           )
         }
+        <Route exact path="/new-review">
+          <NewReview game={selectedGame} user={user}/>
+        </Route>
         <Route exact path="/">
           <Home reviews={reviews} setReviews={setReviews} setSelectedReview={setSelectedReview}/>
         </Route>
@@ -64,12 +68,12 @@ function App() {
         {
           selectedGame && (
         <Route exact path={`/results/${selectedGame.id}`}>
-          <ResultDetails game={selectedGame}/>
+          <ResultDetails game={selectedGame}  setSelectedReview={setSelectedReview} setSelectedGame={setSelectedGame} user={user}/>
         </Route>
           )
         }
         <Route exact path="/results">
-          <SearchResults search={search} setSelectedGame={setSelectedGame}/>
+          <SearchResults search={search} setSelectedGame={setSelectedGame} />
         </Route>
         { 
           selectedReview && (

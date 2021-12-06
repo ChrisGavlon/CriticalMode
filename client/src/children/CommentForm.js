@@ -26,14 +26,15 @@ function CommentForm( { user, review, afterCommented } ){
         const data = await response.json();
         if (response.ok) {
           console.log("Comment created:", data);
+          document.getElementById("user-post").value = "";
           afterCommented();
         } 
-      }
+    }
 
     return (
-        <div>
-            <img src={user.prof_img} style={{width: "30px", height: "30px"}}/>
-            <form onSubmit={handleSubmit}>
+        <div className="div-above-comment-form">
+            <img src={user.prof_img} style={{width: "40px", height: "40px"}}/>
+            <form id="comment-form" onSubmit={handleSubmit}>
             <textarea 
             id="user-post"
             placeholder="Post a comment" 
@@ -42,7 +43,10 @@ function CommentForm( { user, review, afterCommented } ){
             />
             <br/>
             { display ? (
-            <><input type="button" value="CANCEL" onClick={(e) => handleCancel()}/><input type="submit" value="COMMENT"/></>
+            <div className="cancel-post">
+            <input id="cancel-comment" type="button" value="CANCEL" onClick={(e) => handleCancel()}/><input id="post-comment" type="submit" value="COMMENT"/> 
+            <br id="last-break"/>
+            </div>
             ) : (
             null
             )

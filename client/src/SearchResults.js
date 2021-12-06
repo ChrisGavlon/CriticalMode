@@ -15,7 +15,7 @@ function SearchResults({ search, setSelectedGame }) {
   return (
     <div className="result-list">
         {filteredGames.map((game) => {
-          return <ResultCard key={game.id} game={game} setSelectedGame={setSelectedGame}/>
+          return <ResultCard key={game.id} game={game} setSelectedGame={setSelectedGame} />
         })}
     </div>
   )
