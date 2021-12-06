@@ -27,6 +27,17 @@ function App() {
     });
   }, []);
 
+  function refresh(){
+    fetch("/me").then((response) => {
+      if (response.ok) {
+        response.json().then((user) => {
+        setUser(user)
+        window.location.reload(false);
+        });
+      }
+    });
+  }
+
 
   return (
 
@@ -55,7 +66,7 @@ function App() {
           <NewReview game={selectedGame} user={user}/>
         </Route>
         <Route exact path="/profile">
-          <UserPage user={user} setSelectedReview={setSelectedReview}/>
+          <UserPage user={user} setSelectedReview={setSelectedReview} setUser={setUser} refresh={refresh} />
         </Route>
         <Route exact path="/">
           <Home reviews={reviews} setReviews={setReviews} setSelectedReview={setSelectedReview}/>
