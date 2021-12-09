@@ -35,23 +35,21 @@ function NewReview( { game, user } ) {
 
   return (
     <div className="new-review-div">
-      <form onSubmit={handleSubmit}>
-        <h1>
-          Game: {game.title}
-        </h1>
-        <h1>
-          Title: <input type="text" className="new-review-title" onChange={(e) => setTitle(e.target.value)} />
-        </h1>
-        <h1>
-          Score: <input type="number" min="1" max="10" className="new-review-score" onChange={(e) => setScore(e.target.value)} />
-        </h1>
+      <h1 id="new-review-title">
+        Game: {game.title}
+      </h1>
+      <form id="new-review-form" onSubmit={handleSubmit}>
+          <input type="text" placeholder="Title" className="new-review-title" onChange={(e) => setTitle(e.target.value)} />
+          <input type="number" placeholder="Score" min="1" max="10" className="new-review-score" onChange={(e) => setScore(e.target.value)} />
         <h2>Start Writing:</h2>
         <br/>
+        <div id="random-div">
           <CKEditor 
           editor={BalloonBlockEditor}
           onChange={(e, editor) => handleEdit(e, editor)}
           />
-        <input type="submit" value="Submit Review!"></input>
+        </div>
+        <input type="submit" value="Submit Review!" id="submit-review"></input>
       </form>
     </div>
   )

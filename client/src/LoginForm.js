@@ -22,7 +22,7 @@ function LoginForm({setUser, history}) {
 
   return (
     <div className="form">
-        <h2>Login!</h2>
+        <h2 className="login-h1">Login!</h2>
         <form onSubmit={handleSubmit}>
             <label htmlFor="username">Username:</label>
             <br/>

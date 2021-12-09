@@ -44,14 +44,14 @@ function UserPage({ user, setSelectedReview, setUser, refresh }){
 
             <div className="my-profile">
                 {updating ? (
-                    <form onSubmit={(e) => handleUpdate(e)}>
+                    <form className="update-user-form" onSubmit={(e) => handleUpdate(e)}>
                         <input placeholder="New Profile Pic: " onChange={(e) => setProf_img(e.target.value)}/>
                         <br/>
                         <input placeholder="New Username:" onChange={(e) => setUsername(e.target.value)}/>
                         <br/>
-                        <input placeholder="New Bio: " onChange={(e) => setBio(e.target.value)}/>
+                        <textarea placeholder="New Bio: " onChange={(e) => setBio(e.target.value)}/>
                         <br/>
-                        <button onClick={() => setUpdating(false)}>CANCEL</button> <input type="submit"/> 
+                        <button className="cancel-bttn" id="cancel-update-user" onClick={() => setUpdating(false)}>CANCEL</button> <input type="submit"/> 
                     </form> ) : (
                     <>
                         <img src={user.prof_img} id="my-prof-img" className="user-prof-img"/>

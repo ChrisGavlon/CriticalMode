@@ -44,7 +44,8 @@ function CommentForm( { user, review, afterCommented } ){
             <br/>
             { display ? (
             <div className="cancel-post">
-            <input id="cancel-comment" type="button" value="CANCEL" onClick={(e) => handleCancel()}/><input id="post-comment" type="submit" value="COMMENT"/> 
+            <input id="cancel-comment" className="cancel-bttn" type="button" value="CANCEL" onClick={(e) => handleCancel()}/>
+            <input id="post-comment" type="submit" value="COMMENT"/> 
             <br id="last-break"/>
             </div>
             ) : (

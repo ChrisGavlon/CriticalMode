@@ -36,7 +36,7 @@ function SignUpForm({ setUser, history }) {
   return (
     <div>
         <div className="form">
-        <h2>Sign-up!</h2>
+        <h2 className="signup-h2">Sign-up!</h2>
         <form onSubmit={handleSubmit}>
             <label htmlFor="username">Username:</label>
             <br/>
