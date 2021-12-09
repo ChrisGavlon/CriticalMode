@@ -25,7 +25,7 @@ function NavBar({ history, user, setUser, setSearch }) {
               <>
               <FontAwesomeIcon icon={faSearch} className="searchIcon" onClick={(e) => setDisplaySearch(null)}/>
               <p id="userGreeting">Hello, <strong>{user.username}</strong>!</p>
-              <Link to="/profile"><img id="userPFP" src={user.prof_img}/></Link>
+              <Link to="/profile"><img id="userPFP" src={user.prof_img} className="user-prof-img"/></Link>
               <button className="navBarBttn" id="logoutBttn" onClick={handleLogout}>Logout</button>
               </>
               ) : (

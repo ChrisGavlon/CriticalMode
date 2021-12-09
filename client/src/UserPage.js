@@ -40,7 +40,7 @@ function UserPage({ user, setSelectedReview, setUser, refresh }){
 
     return (
         <div className="user-page">
-            <h1 id="my-profile-text">My Profile</h1>
+            <h1 id="my-profile-text" >My Profile</h1>
 
             <div className="my-profile">
                 {updating ? (
@@ -54,18 +54,20 @@ function UserPage({ user, setSelectedReview, setUser, refresh }){
                         <button onClick={() => setUpdating(false)}>CANCEL</button> <input type="submit"/> 
                     </form> ) : (
                     <>
-                        <img src={user.prof_img} id="my-prof-img"/>
+                        <img src={user.prof_img} id="my-prof-img" className="user-prof-img"/>
                         <h2 id="my-username">{user.username}</h2>
                         <h4 id="my-bio">{user.bio}</h4>
-                        <button onClick={() => setUpdating(true)}>UPDATE</button>
+                        <button onClick={() => setUpdating(true)} className="update-bttn" id="usr-updt-bttn">UPDATE</button>
                     </>
                     ) 
                 }
                 </div>
             <h1 id="my-reviews-text">My Reviews</h1>
+        <div className="my-review-list">
             {AssoReviews.map((review) => {
           return <MyReviews key={review.id} review={review} setSelectedReview={setSelectedReview} afterDelete={afterDelete}/>
         })}
+        </div>
         </div>
     )
 }

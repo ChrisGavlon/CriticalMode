@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     skip_before_action :authorize, only: [:index, :show]
 
     def index
-        reviews = Review.all
+        reviews = Review.all.order(created_at: :desc)
         render json: reviews
     end
 

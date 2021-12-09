@@ -33,7 +33,7 @@ function CommentForm( { user, review, afterCommented } ){
 
     return (
         <div className="div-above-comment-form">
-            <img src={user.prof_img} style={{width: "40px", height: "40px"}}/>
+            <img src={user.prof_img} style={{width: "40px", height: "40px"}} className="user-prof-img" id="prof-on-commentform"/>
             <form id="comment-form" onSubmit={handleSubmit}>
             <textarea 
             id="user-post"

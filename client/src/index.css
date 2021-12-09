@@ -1,13 +1,20 @@
 body{
   color: whitesmoke;
   font-family: sans-serif;
-  background-color: #414142;
+  background-color: #2b2d31;
+}
+
+.user-prof-img{
+  border-radius: 20px;
+  border: 10px;
+  border-width: 10px;
+  border-color: black;
 }
 
 /*---------------NAVBAR.JS--------------------------------------------------------------------------------------------------------------*/
 .navBar {
   z-index: 1;
-  background-color: #2f3030;
+  background-color: #242529;
   top: 0;
   left: 0;
   width: 100%;
@@ -25,23 +32,29 @@ body{
   font-family: 'Outfit', sans-serif;
   font-weight: 900;
   display: inline-block;
-  background-color: #2f3030;
+  border-radius: 20px;
+  background-image: linear-gradient( #000000, #151517, #242426 );
   border: 3px;
-  border-color: rgb(1, 82, 204); /*need to make this appear */
   margin: 1rem;
   padding: 10px;
   text-decoration: none;
-  color:#2872c7;
+  color: #269aff;
   cursor: pointer;
+  transition: all 0.5s;
+}
+
+.navBarBttn:hover{
+  color: white;
+  background-image: linear-gradient( #000000, #151517, blue );
 }
 
 .homeBttn{
+  font-family: 'Russo One', sans-serif;
   position: absolute;
-  left: 10%;
+  left: 8%;
   top: 25%;
   font-size: 2em;
-  font-family: sans-serif;
-  color:#2872c7;
+  color: #269aff;
   text-decoration: none;
 }
 
@@ -86,40 +99,111 @@ button#logoutBttn{
 }
 
 /*------------HOME.JS----------------------------------------------------------------------------------------------------------*/
+.home{
+  position: absolute;
+  margin-top: 100px;
+  left: 10%;
+  padding: 200px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: #269aff;
+  text-decoration: none;
+  background-color: #242529;
+  box-shadow: 0 0 10px rgba(0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.12);
+}
+
+#homepage-latest-reviews{
+  text-decoration: underline;
+}
 
 .review-list{
-  position: absolute;
   flex-direction: column;
   display: flex;
   flex-wrap: wrap;
   top: 100px;
-  left: 30%;
+  left: 25%;
 }
 
 .review-card{
-  text-decoration: none;
-  margin: 10px;
-  width: 500px;
-  padding: 25px;
-  color: whitesmoke;
-  background: #2f3030;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.12);
-  transition: transform .2s;
+    text-decoration: none;
+    margin: 10px;
+    min-width: 600px;
+    max-height: 150px;
+    padding: 25px;
+    color: whitesmoke;
+    background: #242529;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.12);
+    transition: transform .2s;
 }
 
 .review-card:hover{
   background-color: #1f2121;
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.1); 
 }
 
-/*---------------FORMS--------------------------------------------------------------------------------------------*/
+.review-card-title{
+  position: relative;
+  color: #269aff;
+  font-size: x-large;
+  text-align: center;
+  bottom: 30px;
+}
+
+.review-card-score{
+  position: relative;
+  color: #269aff;
+  font-size: 3em;
+  bottom: 50px;
+  left: 25px;
+}
+
+.topic{
+  position: relative;
+  font-size: larger;
+  left: 100px; 
+  bottom: 160px;
+}
+
+#By{
+  position: relative;
+  left: 100px; 
+  bottom: 170px;
+}
+
+#review-card-prof-img{
+  position: relative;
+  left: 110px; 
+  bottom: 163px;
+}
+
+.review-card-username{
+  position: relative;
+  color: #898a8c;
+  left: 120px; 
+  bottom: 170px;
+}
+
+.review-card-comments{
+  position: relative;
+  color: #898a8c;
+  left: 100px; 
+  bottom: 170px;
+}
+
+
+
+/*--------------LOGIN-&-SIGNUP-FORM--------------------------------------------------------------------------------------------*/
 
 .form{
   color: whitesmoke;
   border-radius: 5px;
-  background-color: #2f3030;
+  background-color: #242529;
   padding: 20px;
   margin: 10% 30% 10% 30%;
+  box-shadow: 0 0 10px rgba(0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.12);
 }
 
 /*-------------REVIEWS--------------------------------------------------------------------------------------------*/
@@ -128,7 +212,7 @@ button#logoutBttn{
   width: 55em;
   text-align: left;
   font-size: 20px;
-  background-color: #2f3030;
+  background-color: #242529;
   margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
@@ -136,19 +220,32 @@ button#logoutBttn{
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.12);
 }
 
 .body-paragraph{
   line-height: 1.5em;
 }
 
-h1.score {
-  color: #2872c7;
+.score {
+  color: #269aff;
   font-weight: bold;
+  transform: rotate(-45deg);
 }
 
 .username{
-  color: #2872c7;
+  color: #269aff;
+}
+
+#review-detail-user-img{
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+#review-detail-username{
+  display: inline-block;
+  margin-left: 10px;
 }
 
 /*----------------COMMENT-SECTION------------------------------------------------------------------------------*/
@@ -230,19 +327,25 @@ h1.score {
   width: 660px;
 }
 
+.comment-username{
+  color: #269aff;
+}
+
 /*------SEARCH----------------------------------------------------------------------------------*/
 
 .search-form{
   margin-left: 8%;
+  min-width: 25em;
 }
 
 .searchbar{
-  background-color: #2f3030;
+  background-color: #242529;
   color: white;
   font-family: sans-serif;
   margin-top: 20px;
   height: 2em;
   width: 50em;
+  min-width: 25em;
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
@@ -270,25 +373,41 @@ h1.score {
 .result-cards{
   text-decoration: none;
   margin: 10px;
-  width: 500px;
+  width: 225px;
+  max-height: 400px;
   padding: 25px;
   color: whitesmoke;
-  background: #2f3030;
+  background: #242529;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.12);
   transition: transform .2s;
 }
 .result-cards:hover{
   background-color: #1f2121;
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.1); 
+}
+
+.result-img{
+  display: block;
+  max-height: 200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .result-list{
   position: absolute;
-  flex-direction: column;
+  flex-direction: row;
   display: flex;
   flex-wrap: wrap;
   top: 100px;
-  left: 30%;
+  left: 10%;
+}
+
+.results-link{
+  text-decoration: none;
+  color: white;
 }
 
 .cancel-search:hover{
@@ -303,12 +422,13 @@ h1.score {
 
   .game-details{
     position: absolute;
-    margin-top: 150px;
+    margin-top: 100px;
     left: 10%;
     padding: 200px;
     padding-top: 100px;
     padding-bottom: 100px;
-    background-color: #2f3030;
+    background-color: #242529;
+    box-shadow: 0 0 10px rgba(0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.12);
   }
 
   .related-reviews{
@@ -323,12 +443,16 @@ h1.score {
 
   #reviews-for-this-game{
     padding-bottom: 60px;
+    text-decoration: underline;
+    color: #269aff;
   }
 
   .asso-review-cards{ 
     text-decoration: none;
     margin: 10px;
+    margin-bottom: 15px;
     width: 500px;
+    max-height: 150px;
     padding: 25px;
     color: whitesmoke;
     background: #242529;
@@ -343,6 +467,9 @@ h1.score {
 
   .asso-review-cards:hover{
     background-color: #1f2121;
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.1);
   }
 
   .selected-game{
@@ -358,12 +485,17 @@ h1.score {
   }
 
   .selected-game img{
+    display: block;
+    text-align: center;
     max-width: 500px;
     margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
     padding-bottom: 0px;
   }
 
   #game-title{
+    color: #269aff;;
     text-align: center;
     font-size: 40px;
     font-weight: bolder;
@@ -371,12 +503,16 @@ h1.score {
     margin-top: 0px;
   }
 
+  #createReviewBttn{
+    margin-left: 0px;
+  }
+
   /*--------------NEW-REVIEW-FORM------------------------------------------------------------------------------------*/
   .new-review-div{
     width: 55em;
     text-align: left;
     font-size: 20px;
-    background-color: #2f3030;
+    background-color: #242529;
     margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
@@ -384,49 +520,8 @@ h1.score {
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.12);
   }
-
-  /* .searchbar-form {
-    color: white;
-    padding: 16px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .searchbar-form:hover, .searchbar-form:focus {
-    background-color: grey;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    font-size: 18px;
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    max-height: 260px;
-    width: 260px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .drop-item {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .drop-item:hover {background-color: #ddd;}
-  
-  .show {display: block;} */
 
   /*--------USER-PAGE------------------------------------------------------------------------------------------*/
 
@@ -437,7 +532,8 @@ h1.score {
     padding: 200px;
     padding-top: 100px;
     padding-bottom: 100px;
-    background-color: #2f3030;
+    background-color: #242529;
+    box-shadow: 0 0 10px rgba(0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.12);
   }
 
   .my-profile{
@@ -456,32 +552,91 @@ h1.score {
     max-width: 200px;
   }
 
+  .update-bttn{
+    font-size: 1rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    display: inline-block;
+    border-radius: 20px;
+    background-image: linear-gradient( #000000, #151517, #242426 );
+    border: 3px;
+    margin: 1rem;
+    padding: 10px;
+    text-decoration: none;
+    color: #e3db44;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+
+  .update-bttn:hover{
+    color: white;
+    background-image: linear-gradient( #000000, #151517, yellow );
+  }
+
   /*-------MY-REVIEWS------------------------------------------------------------------------------------------*/
 
+  .my-review-list{
+    margin-top: 40px;
+  }
+
   .my-review-card-div{
-    margin: 10px;
+    margin: 1px;
     width: 500px;
+    max-height: 150px;
     padding: 25px;
     color: whitesmoke;
     background: #242529;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.12);
+    transition: transform .2s;
   }
 
   .my-review-card-link{
     text-decoration: none;
+    color: white;
+    transition: transform .2s;
   }
   
   .my-review-card-div:hover{
     background-color: #1f2121;
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.1);
   }
 
   #my-profile-text{
     font-size: 3em;
     text-decoration: underline;
     border: 3px;
+    color: #269aff;;
   }
 
   #my-reviews-text{
     text-decoration: underline;
+    color: #269aff;;
+  }
+
+  .delReview{
+    position: relative;
+    left:80%; 
+    bottom: 150px;
+    font-size: 1rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    display: inline-block;
+    border-radius: 20px;
+    background-image: linear-gradient( #000000, #151517, #242426 );
+    border: 3px;
+    margin: 1rem;
+    padding: 10px;
+    text-decoration: none;
+    color: #b00404;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+
+  .delReview:hover{
+    color: white;
+    background-image: linear-gradient( #000000, #151517, red );
+    cursor: pointer;
   }

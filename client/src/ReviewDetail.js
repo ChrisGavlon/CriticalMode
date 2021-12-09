@@ -7,10 +7,10 @@ function ReviewDetail({ review, user }) {
   return (
     <div className="review-details">
       <h1>{review.title}</h1>
-      <img src={review.user.prof_img} style={{width: "40px", height: "40px"}}/> <h4>by <strong className="username">{review.user.username}</strong></h4>
+      <img alt="author-pfp" src={review.user.prof_img} style={{width: "40px", height: "40px"}} className="user-prof-img" id="review-detail-prof-img"/> 
+      <h4 id="review-detail-username">by <strong className="username">{review.user.username}</strong></h4>
       <h4 className="body-paragraph">{ReactHtmlParser(review.body)}</h4>
-      <h1 className="score">{review.score}</h1>
-      <h2 id="text-comments">Comments</h2>
+      <h1>Score: <span className="score">{review.score}</span></h1>
       <CommentSection review={review} user={user}/>
     </div>
   )

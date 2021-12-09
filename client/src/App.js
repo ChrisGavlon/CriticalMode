@@ -97,7 +97,7 @@ function App() {
           </Route>
         )
         }
-        <Route exact path="/">
+        <Route path="/">
           <Home reviews={reviews} setReviews={setReviews} setSelectedReview={setSelectedReview}/>
         </Route>
       </Switch>

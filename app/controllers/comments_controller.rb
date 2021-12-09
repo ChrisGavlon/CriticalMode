@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     skip_before_action :authorize, only: [:index, :show]
 
     def index
-        comments = Comment.all
+        comments = Comment.all.order(created_at: :desc)
         render json: comments
     end
 

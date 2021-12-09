@@ -32,7 +32,7 @@ function ResultDetails({ game, setSelectedReview, setSelectedGame, user }) {
       <div className="related-reviews">
         <h2 id="reviews-for-this-game">Reviews For This Game</h2>
         {AssoReviews.map((review) => {
-          return <AssociatedReview review={review} setSelectedReview={setSelectedReview}/>
+          return <AssociatedReview key={review.id} review={review} setSelectedReview={setSelectedReview}/>
         })}
       </div>
     </div>

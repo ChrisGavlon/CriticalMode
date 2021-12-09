@@ -22,8 +22,11 @@ function CommentSection({ review, user }) {
     (comment) => comment.review_id === review.id
   )
 
+  const count = displayedComments.length;
+
     return (
       <div className="comment-section">
+        <h2 id="text-comments">{count} Comments</h2>
         { user ? (
         <CommentForm user={user} review={review} afterCommented={afterCommented}/>
         ) : (

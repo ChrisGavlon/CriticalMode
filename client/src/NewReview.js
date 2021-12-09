@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import BalloonBlockEditor from '@ckeditor/ckeditor5-build-balloon-block';
 
 function NewReview( { game, user } ) {
-  const [score, setScore] = useState()
-  const [title, setTitle] = useState("")
-  const [body, setBody] = useState()
-  const [user_id, setUser_id] = useState(user.id)
-  const [game_id, setGame_id] = useState(game.id)
+  const [score, setScore] = useState();
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState();
+  const [user_id, setUser_id] = useState(user.id);
+  const [game_id, setGame_id] = useState(game.id);
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -23,6 +25,7 @@ function NewReview( { game, user } ) {
     const data = await response.json();
     if (response.ok) {
       console.log("Review created:", data);
+      history.push('/profile')
     } 
   }
 
@@ -40,7 +43,7 @@ function NewReview( { game, user } ) {
           Title: <input type="text" className="new-review-title" onChange={(e) => setTitle(e.target.value)} />
         </h1>
         <h1>
-          Score: <input type="text" className="new-review-score" onChange={(e) => setScore(e.target.value)} />
+          Score: <input type="number" min="1" max="10" className="new-review-score" onChange={(e) => setScore(e.target.value)} />
         </h1>
         <h2>Start Writing:</h2>
         <br/>
