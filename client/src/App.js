@@ -45,23 +45,15 @@ function App() {
       <NavBar history={history} user={user} setUser={setUser} setSearch={setSearch}/>
       { user ? (
       <Switch>
-        {
-          selectedGame && (
-        <Route exact path={`/results/${selectedGame.id}`}>
-          <ResultDetails game={selectedGame} setSelectedReview={setSelectedReview} setSelectedGame={setSelectedGame} user={user}/>
+        <Route path="/results/:id">
+          <ResultDetails setSelectedReview={setSelectedReview} setSelectedGame={setSelectedGame} user={user}/>
         </Route>
-          )
-        }
         <Route exact path="/results">
           <SearchResults search={search} setSelectedGame={setSelectedGame} />
         </Route>
-        { 
-          selectedReview && ( 
-          <Route exact path={`/reviews/${selectedReview.id}`}>
-            <ReviewDetail review={selectedReview} user={user}/>
+          <Route path="/reviews/:id">
+            <ReviewDetail user={user}/>
           </Route>
-          )
-        }
         <Route exact path="/new-review">
           <NewReview game={selectedGame} user={user}/>
         </Route>
@@ -80,24 +72,16 @@ function App() {
         <Route exact path="/signup">
           <SignUpForm setUser={setUser} history={history}/>
         </Route>
-        {
-          selectedGame && (
-        <Route exact path={`/results/${selectedGame.id}`}>
-          <ResultDetails game={selectedGame}  setSelectedReview={setSelectedReview} setSelectedGame={setSelectedGame} user={user}/>
+        <Route path="/results/:id">
+          <ResultDetails setSelectedReview={setSelectedReview} setSelectedGame={setSelectedGame} user={user}/>
         </Route>
-          )
-        }
         <Route exact path="/results">
           <SearchResults search={search} setSelectedGame={setSelectedGame} />
         </Route>
-        { 
-          selectedReview && (
-          <Route exact path={`/reviews/${selectedReview.id}`}>
-            <ReviewDetail review={selectedReview} user={user}/>
+          <Route path="/reviews/:id">
+            <ReviewDetail user={user}/>
           </Route>
-        )
-        }
-        <Route path="/">
+        <Route exact path="/">
           <Home reviews={reviews} setReviews={setReviews} setSelectedReview={setSelectedReview}/>
         </Route>
       </Switch>

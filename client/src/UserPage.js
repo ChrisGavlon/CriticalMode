@@ -51,7 +51,8 @@ function UserPage({ user, setSelectedReview, setUser, refresh }){
                         <br/>
                         <textarea placeholder="New Bio: " onChange={(e) => setBio(e.target.value)}/>
                         <br/>
-                        <button className="cancel-bttn" id="cancel-update-user" onClick={() => setUpdating(false)}>CANCEL</button> <input type="submit"/> 
+                        <button className="cancel-bttn" id="cancel-update-user" onClick={() => setUpdating(false)}>CANCEL</button> 
+                        <input type="submit"/> 
                     </form> ) : (
                     <>
                         <img src={user.prof_img} id="my-prof-img" className="user-prof-img"/>

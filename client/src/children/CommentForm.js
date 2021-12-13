@@ -1,10 +1,11 @@
 import { useState } from 'react'
 
-function CommentForm( { user, review, afterCommented } ){
+function CommentForm( { user, review_id, afterCommented } ){
     const [display, setDisplay] = useState(false)
     const [body, setBody] = useState("")
     const [user_id, setUser_id] = useState(user.id)
-    const [review_id, setReview_id] = useState(review.id)
+
+    debugger;
 
     function handleCancel() {
     setDisplay(!display)

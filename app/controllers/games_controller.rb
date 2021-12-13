@@ -7,7 +7,7 @@ class GamesController < ApplicationController
     end
 
     def show
-        game = Game
+        game = find_game
         render json: game
     end
 

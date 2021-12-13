@@ -1,9 +1,19 @@
 import AssociatedReview from "./children/AssociatedReview";
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-function ResultDetails({ game, setSelectedReview, setSelectedGame, user }) {
+function ResultDetails({ setSelectedReview, setSelectedGame, user }) {
   const [reviews, setReviews] = useState([])
+  const [game, setGame] = useState([])
+  const {id} = useParams();
+
+  useEffect(()=> {
+    fetch(`/games/${id}`)
+    .then((r) => r.json())
+    .then((data) => {
+        setGame(data)
+    })
+  }, [])
 
   useEffect(() => {
     fetch("/reviews")
