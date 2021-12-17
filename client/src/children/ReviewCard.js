@@ -17,7 +17,7 @@ function ReviewCard({ review, setSelectedReview }) {
   const count = AssoComments.length
 
     return (
-      <Link className="review-card" onClick={() => setSelectedReview(review)} to={`/reviews/${review.id}`}>
+      <Link className="review-card" onClick={() => setSelectedReview(review)} to={`/review-detail/${review.id}`}>
         <h3 className="review-card-title">{review.title}</h3>
         <h3 className="review-card-score">{review.score}</h3> 
         <h4 className="topic">{review.game.title} </h4>

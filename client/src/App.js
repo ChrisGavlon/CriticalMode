@@ -51,7 +51,7 @@ function App() {
         <Route exact path="/results">
           <SearchResults search={search} setSelectedGame={setSelectedGame} />
         </Route>
-          <Route path="/reviews/:id">
+          <Route path="/review-detail/:id">
             <ReviewDetail user={user}/>
           </Route>
         <Route exact path="/new-review/:id">
@@ -72,13 +72,13 @@ function App() {
         <Route exact path="/signup">
           <SignUpForm setUser={setUser} history={history}/>
         </Route>
-        <Route path="/results/:id">
+        <Route path="/result/:id">
           <ResultDetails setSelectedReview={setSelectedReview} setSelectedGame={setSelectedGame} user={user}/>
         </Route>
         <Route exact path="/results">
           <SearchResults search={search} setSelectedGame={setSelectedGame} />
         </Route>
-          <Route path="/reviews/:id">
+          <Route path="/review-detail/:id">
             <ReviewDetail user={user}/>
           </Route>
         <Route exact path="/">
