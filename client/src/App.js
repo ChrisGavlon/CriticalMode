@@ -54,8 +54,8 @@ function App() {
           <Route path="/reviews/:id">
             <ReviewDetail user={user}/>
           </Route>
-        <Route exact path="/new-review">
-          <NewReview game={selectedGame} user={user}/>
+        <Route exact path="/new-review/:id">
+          <NewReview user={user}/>
         </Route>
         <Route exact path="/profile">
           <UserPage user={user} setSelectedReview={setSelectedReview} setUser={setUser} refresh={refresh} />

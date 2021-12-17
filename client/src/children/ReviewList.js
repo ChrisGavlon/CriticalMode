@@ -9,6 +9,8 @@ function ReviewList({reviews, setReviews, setSelectedReview}) {
         .then(setReviews);
     }, [setReviews]);
 
+    console.log(reviews)
+
     return (
       <div className="review-list">
           {reviews.map((review) => {

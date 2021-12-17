@@ -103,6 +103,7 @@ button#logoutBttn{
   position: absolute;
   margin-top: 100px;
   left: 10%;
+  right: 10%;
   padding: 200px;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -121,13 +122,16 @@ button#logoutBttn{
   display: flex;
   flex-wrap: wrap;
   top: 100px;
-  left: 25%;
+  left: 10%;
+  right: 10%;
+  min-width: 400px;
 }
 
 .review-card{
     text-decoration: none;
     margin: 10px;
-    min-width: 600px;
+    min-width: 400px;
+    min-height: 100px;
     max-height: 150px;
     padding: 25px;
     color: whitesmoke;
@@ -462,6 +466,7 @@ button#logoutBttn{
   flex-wrap: wrap;
   top: 100px;
   left: 10%;
+  right: 10%;
 }
 
 .results-link{

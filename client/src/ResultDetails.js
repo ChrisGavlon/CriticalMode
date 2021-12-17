@@ -34,7 +34,7 @@ function ResultDetails({ setSelectedReview, setSelectedGame, user }) {
         <h4 id="game-dev">Developer(s): {game.developer}</h4>
         <h4 id="game-genre">Genre: {game.genre}</h4>
         { user ? (
-        <Link className="navBarBttn" id="createReviewBttn" to="/new-review" onClick={() => setSelectedGame(game)}>Create Review</Link>
+        <Link className="navBarBttn" id="createReviewBttn" to={`/new-review/${game.id}`}>Create Review</Link>
         ) : (
           null
         )}

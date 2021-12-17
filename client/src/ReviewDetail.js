@@ -5,9 +5,9 @@ import parse from 'html-react-parser'
 
 function ReviewDetail({ user }) {
   const [review, setReview] = useState([]);
-  const [reviewUser, setReviewUser] = useState([])
+  const [reviewUser, setReviewUser] = useState([]);
   const {id} = useParams();
-  const [body, setBody] = useState("")
+  const [body, setBody] = useState("");
 
   useEffect(()=> {
     fetch(`/reviews/${id}`)
