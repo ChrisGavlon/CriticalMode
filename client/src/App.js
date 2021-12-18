@@ -72,7 +72,7 @@ function App() {
         <Route exact path="/signup">
           <SignUpForm setUser={setUser} history={history}/>
         </Route>
-        <Route path="/result/:id">
+        <Route path="/results/:id">
           <ResultDetails setSelectedReview={setSelectedReview} setSelectedGame={setSelectedGame} user={user}/>
         </Route>
         <Route exact path="/results">
