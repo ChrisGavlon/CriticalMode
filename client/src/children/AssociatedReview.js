@@ -4,7 +4,7 @@ function AssociatedReview({ review, setSelectedReview }){
     const count = review.comments.length;
 
     return (
-        <Link className="asso-link" onClick={() => setSelectedReview(review)} to={`/reviews/${review.id}`}>
+        <Link className="asso-link" onClick={() => setSelectedReview(review)} to={`/review-detail/${review.id}`}>
         <div className="asso-review-cards">
             <h3 className="review-card-title">{review.title}</h3>
             <h3 className="review-card-score">{review.score}</h3> 
